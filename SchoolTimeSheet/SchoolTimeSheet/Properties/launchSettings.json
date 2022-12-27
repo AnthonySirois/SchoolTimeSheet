@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SchoolTimeSheet (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "SchoolTimeSheet (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
