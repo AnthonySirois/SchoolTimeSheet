@@ -10,9 +10,40 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
-        <Button>Test</Button>
-    </StackPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border x:Name="AppTitleBar" Grid.Column="0" VerticalAlignment="Top">
+            <TextBlock x:Name="AppTitle" Text="Time sheet" Style="{StaticResource CaptionTextBlockStyle}" VerticalAlignment="Top" Margin="4,4,0,4"/>
+        </Border>
+        <NavigationView Grid.Row="1" Loaded="NavigationView_Loaded" 
+                        ItemInvoked="NavigationView_ItemInvoked"
+                        IsBackButtonVisible="Collapsed">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Tag="home" Icon="Home" Content="Home" x:Name="Home"/>
+                <NavigationViewItem Tag="edit" Icon="Edit" Content="Edit" x:Name="Edit"/>
+                <NavigationViewItem Tag="statistics" Icon="Placeholder" Content="Statistics" x:Name="Stats"/>
+            </NavigationView.MenuItems>
+            <Frame x:Name="ContentFrame" Padding="4,4,12,24"></Frame>
+        </NavigationView>
+    </Grid>
+    
+    <!--
+    <ListView>
+        <GridView>
+            <TimePicker ClockIdentifier="24HourClock" SelectedTime="00:00" MinuteIncrement="15"/>
+            <TimePicker ClockIdentifier="24HourClock" SelectedTime="00:00" MinuteIncrement="15"/>
+        </GridView>
+    </ListView>
+-->
+    <!-- 
+    <TimePicker ClockIdentifier="24HourClock" SelectedTime="00:00" MinuteIncrement="15"/>
+    
+    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEB3C;"/>
+                    </NavigationViewItem.Icon>
+    -->
 
 </Window>
